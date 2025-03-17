@@ -1,0 +1,85 @@
+{
+    "en": {
+      "title": "NU ORCHESTRA",
+      "subtitle": "Cultural and musical association of students",
+      "support": "Support us",
+      "viewSchedule": "VIEW EVENT SCHEDULE",
+      "seeAllEvents": "See All Events",
+      "events": [
+            {
+                "id": 1,
+                "location": "Nazarbayev University, Main Hall",
+                "date": "November 16-17, 2024",
+                "title": "“THE SHOW” - CHOIRCHESTRA"
+            },
+            {
+                "id": 2,
+                "location": "Nazarbayev University, Main Hall",
+                "date": "April 6-7, 2024",
+                "title": "Grand Concert’24"
+            },
+            {
+                "id": 3,
+                "location": "Nazarbayev University, Main Hall",
+                "date": "March 6-7, 2024",
+                "title": "EVENT NAME"
+            }
+        ]
+    },
+    "kaz": {
+      "title": "NU ОРКЕСТРІ",
+      "subtitle": "Студенттердің мәдени және музыкалық қауымдастығы",
+      "support": "Бізді қолданыз",
+      "viewSchedule": "ІС-ШАРА КЕСТЕСІН ҚАРАУ",
+      "seeAllEvents": "Барлық іс-шараларды қарау",
+      "events": [
+            {
+                "id": 1,
+                "location": "Назарбаев Университеті, Мейн Хол",
+                "date": "2024 жылғы 16-17 қараша",
+                "title": "«ШОУ» - ХОРКЕСТРА"
+            },
+            {
+                "id": 2,
+                "location": "Назарбаев Университеті, Мейн Хол",
+                "date": "2024 жылғы 6-7 сәуір",
+                "title": "Гранд Концерт’24"
+            },
+            {
+                "id": 3,
+                "location": "Назарбаев Университеті, Мейн Хол",
+                "date": "2024 жылғы 6-7 наурыз",
+                "title": "ІС-ШАРА АТАУЫ"
+            }
+        ]
+    },
+    "ru": {
+      "title": "НУ ОРКЕСТР",
+      "subtitle": "Культурное и музыкальное объединение студентов",
+      "support": "Поддержите нас",
+      "viewSchedule": "РАСПИСАНИЕ СОБЫТИЙ",
+      "seeAllEvents": "Смотреть все события",
+      "events": [
+            {
+                "id": 1,
+                "location": "Назарбаев Университет, Мейн Хол",
+                "date": "16-17 ноября 2024",
+                "title": "«ШОУ» - ХОРКЕСТРА"
+            },
+            {
+                "id": 2,
+                "location": "Назарбаев Университет, Мейн Хол",
+                "date": "6-7 апреля 2024",
+                "title": "Гранд Концерт’24"
+            },
+            {
+                "id": 3,
+                "location": "Назарбаев Университет, Мейн Хол",
+                "date": "6-7 марта 2024",
+                "title": "НАЗВАНИЕ СОБЫТИЯ"
+            }
+        ]
+    }
+  }
+
+  

@@ -1,0 +1,419 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700&display=swap');
+/* General Styles */
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Crimson Text', serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  color: white;
+  background: url('assets/bg1.png') no-repeat center center/cover;
+}
+
+#app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  
+  width: 100%;
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 10;
+  transition: background 0.3s ease-in-out;
+  background: rgba(0, 0, 0, 0.309);
+}
+
+.logo {
+  position: absolute;
+  left: 3%;
+}
+
+.logo img {
+  height: 60px; /* Adjust size based on responsiveness */
+  max-width: 100%;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  font-size: 20px;
+  text-align: center;
+  flex: 1; /* Allow it to fill space */
+  justify-content: center;
+  
+}
+.nav-links li {
+  color: white;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.nav-links li:hover {
+  opacity: 0.7;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 8px;
+}
+
+/* Support Us Button */
+.support-btn {
+  border: 2px solid white;
+  background: transparent;
+  color: white;
+  font-size: 20px;
+  font-family: 'Crimson Text', serif;
+  padding: 6px 18px;
+  border-radius: 32px;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+  white-space: nowrap;
+}
+
+.support-btn:hover {
+  opacity: 0.7;
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.social-icon {
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.social-icon:hover {
+  opacity: 0.7;
+}
+
+/* Language Selector */
+.language-selector {
+  margin-left: 12px;
+  display: flex;
+  gap: 15px;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+}
+
+.language-selector span {
+  transition: font-weight 0.3s;
+}
+
+.language-selector .active {
+  font-weight: bold;
+}
+
+
+/* Hero Section */
+.hero {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 80px; /* Adjusted to avoid navbar overlap */
+}
+
+.hero-content {
+  max-width: 90%; /* Prevent content from stretching too wide */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-content h1 {
+  font-size: 5rem;
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+.hero-content p {
+  font-size: 2rem;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.event-btn {
+  margin-top: 20px;
+  border: 1px solid white;
+  background: transparent;
+  color: white;
+  font-size: 24px;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+  font-family: 'serif'; /* Ensure a classic font */
+}
+
+.event-btn .arrow {
+  width: 50%; /* Adjust size as needed */
+  margin-top: 40px;
+}
+
+.event-btn:hover {
+  opacity: 0.7;
+  transform: scale(1.05); /* Slight hover effect */
+}
+
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .nav-links {
+    gap: 20px;
+    font-size: 20px;
+  }
+  
+  .support-btn {
+    font-size: 18px;
+    padding: 6px 20px;
+  }
+
+  .social-icon {
+    height: 35px;
+    width: 35px;
+  }
+
+  .language-selector {
+    font-size: 18px;
+  }
+
+  .hero-content {
+    max-width: 90%;
+  }
+
+  .hero-content h1 {
+    font-size: 4rem;
+  }
+
+  .hero-content p {
+    font-size: 1.8rem;
+  }
+
+  .event-btn {
+    width: 220px;
+    height: 220px;
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo img {
+    height: 70px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 18px;
+  }
+
+  .nav-right {
+    justify-content: flex-end;
+    flex-direction: row;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .support-btn {
+    font-size: 16px;
+    padding: 6px 16px;
+  }
+
+  .social-icons {
+    gap: 10px;
+  }
+
+  .social-icon {
+    height: 30px;
+    width: 30px;
+  }
+
+  .language-selector {
+    font-size: 16px;
+    gap: 10px;
+  }
+
+  .hero-content {
+    max-width: 95%;
+  }
+
+  .hero-content h1 {
+    font-size: 3.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1.6rem;
+  }
+
+  .event-btn {
+    width: 200px;
+    height: 200px;
+    font-size: 20px;
+  }
+}
+@media (max-width: 768px) {
+  /* Fix Navbar Layout */
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo img {
+    height: 50px;
+  }
+
+  .nav-links {
+    flex: 2;
+    justify-content: center;
+    gap: 15px;
+    font-size: 16px;
+  }
+  
+  .nav-right {
+    justify-content: flex-end;
+    flex-direction: row;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+
+  .support-btn {
+    font-size: 14px;
+    padding: 5px 14px;
+  }
+
+  .social-icons {
+    gap: 8px;
+  }
+
+  .social-icon {
+    height: 25px;
+    width: 25px;
+  }
+
+  .language-selector {
+    font-size: 14px;
+  }
+
+  /* Fix Hero Section */
+  .hero {
+    height: calc(100vh - 70px);
+  }
+
+  .hero-content {
+    max-width: 95%;
+    padding-top: 10px;
+  }
+
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+
+  .hero-content p {
+    font-size: 1.4rem;
+  }
+
+  .event-btn {
+    width: 160px;
+    height: 160px;
+    font-size: 16px;
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    height: calc(100vh - 60px);
+  }
+
+  .hero-content {
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-content p {
+    font-size: 1.2rem;
+  }
+
+  .event-btn {
+    width: 140px;
+    height: 140px;
+    font-size: 14px;
+    margin-top: 20px;
+  }
+
+
+  /* Fix Navbar Layout */
+  .navbar {
+    height: 60px;
+    padding: 10px 3%;
+  }
+
+  .logo img {
+    height: 40px;
+  }
+
+  .nav-links {
+    flex-direction: row;
+    justify-content: center;
+    font-size: 14px;
+    gap: 10px;
+  }
+
+  .nav-right {
+    justify-content: flex-end;
+    flex-direction: row;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .support-btn {
+    font-size: 12px;
+    padding: 4px 10px;
+  }
+
+  .social-icons {
+    gap: 6px;
+  }
+
+  .social-icon {
+    height: 20px;
+    width: 20px;
+  }
+}
