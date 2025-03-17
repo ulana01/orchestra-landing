@@ -22,14 +22,11 @@ html, body {
 .navbar {
   position: fixed;
   top: 0;
-  
   width: 100%;
-  
   display: flex;
   align-items: center;
   justify-content: space-between;
   z-index: 10;
-  transition: background 0.3s ease-in-out;
   background: rgba(0, 0, 0, 0.309);
 }
 
@@ -49,8 +46,10 @@ html, body {
   list-style: none;
   font-size: 20px;
   text-align: center;
-  flex: 1; /* Allow it to fill space */
+  flex: 2; /* Allow it to fill space */
   justify-content: center;
+  padding-block: 10px;
+  padding-left: 60px;
   
 }
 .nav-links li {
@@ -67,52 +66,17 @@ html, body {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding-top: 8px;
-}
-
-/* Support Us Button */
-.support-btn {
-  border: 2px solid white;
-  background: transparent;
-  color: white;
-  font-size: 20px;
-  font-family: 'Crimson Text', serif;
-  padding: 6px 18px;
-  border-radius: 32px;
-  cursor: pointer;
-  transition: background 0.3s, color 0.3s;
-  white-space: nowrap;
-}
-
-.support-btn:hover {
-  opacity: 0.7;
-}
-
-/* Social Icons */
-.social-icons {
-  display: flex;
-  gap: 10px;
-}
-
-.social-icon {
-  height: 40px;
-  width: 40px;
-  cursor: pointer;
-  transition: opacity 0.3s;
-}
-
-.social-icon:hover {
-  opacity: 0.7;
+  padding: 0px 50px;
 }
 
 /* Language Selector */
 .language-selector {
-  margin-left: 12px;
   display: flex;
   gap: 15px;
   font-size: 20px;
   color: white;
   cursor: pointer;
+  padding: 0px 50px;
 }
 
 .language-selector span {
@@ -134,7 +98,7 @@ html, body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin-top: 80px; /* Adjusted to avoid navbar overlap */
+  margin-top: 90px; /* Adjusted to avoid navbar overlap */
 }
 
 .hero-content {
@@ -189,16 +153,6 @@ html, body {
     gap: 20px;
     font-size: 20px;
   }
-  
-  .support-btn {
-    font-size: 18px;
-    padding: 6px 20px;
-  }
-
-  .social-icon {
-    height: 35px;
-    width: 35px;
-  }
 
   .language-selector {
     font-size: 18px;
@@ -224,10 +178,6 @@ html, body {
 }
 
 @media (max-width: 1024px) {
-  .navbar {
-    flex-direction: column;
-    align-items: center;
-  }
 
   .logo img {
     height: 70px;
@@ -237,27 +187,6 @@ html, body {
     flex-wrap: wrap;
     justify-content: center;
     font-size: 18px;
-  }
-
-  .nav-right {
-    justify-content: flex-end;
-    flex-direction: row;
-    gap: 10px;
-    margin-bottom: 10px;
-  }
-
-  .support-btn {
-    font-size: 16px;
-    padding: 6px 16px;
-  }
-
-  .social-icons {
-    gap: 10px;
-  }
-
-  .social-icon {
-    height: 30px;
-    width: 30px;
   }
 
   .language-selector {
@@ -284,46 +213,22 @@ html, body {
   }
 }
 @media (max-width: 768px) {
-  /* Fix Navbar Layout */
-  .navbar {
-    flex-direction: column;
-    align-items: center;
-  }
 
   .logo img {
     height: 50px;
   }
 
   .nav-links {
-    flex: 2;
     justify-content: center;
     gap: 15px;
     font-size: 16px;
-  }
-  
-  .nav-right {
-    justify-content: flex-end;
-    flex-direction: row;
-    gap: 10px;
-    margin-bottom: 10px;
-  }
-
-
-  .support-btn {
-    font-size: 14px;
-    padding: 5px 14px;
-  }
-
-  .social-icons {
-    gap: 8px;
-  }
-
-  .social-icon {
-    height: 25px;
-    width: 25px;
+    padding-block: 6px;
+    padding-left: 60px;
+    margin: 10px;
   }
 
   .language-selector {
+    display: flex;
     font-size: 14px;
   }
 
@@ -354,8 +259,22 @@ html, body {
 }
 
 @media (max-width: 480px) {
+  .nav-links {
+    justify-content: center;
+    gap: 15px;
+    font-size: 16px;
+    padding-block: 6px;
+    padding-left: 60px;
+    margin: 10px;
+  }
+  .language-selector {
+    display: flex;
+    gap: 8px;
+    font-size: 14px;
+    padding: 0px 20px;
+  }
   .hero {
-    height: calc(100vh - 60px);
+    height: calc(100vh - 70px);
   }
 
   .hero-content {
@@ -394,26 +313,5 @@ html, body {
     justify-content: center;
     font-size: 14px;
     gap: 10px;
-  }
-
-  .nav-right {
-    justify-content: flex-end;
-    flex-direction: row;
-    gap: 10px;
-    margin-bottom: 10px;
-  }
-
-  .support-btn {
-    font-size: 12px;
-    padding: 4px 10px;
-  }
-
-  .social-icons {
-    gap: 6px;
-  }
-
-  .social-icon {
-    height: 20px;
-    width: 20px;
   }
 }

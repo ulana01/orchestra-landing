@@ -18,23 +18,30 @@
       </div>
   
       <div class="music-player">
-        <img src="@/assets/theshow.jpeg" alt="Cover" class="player-image" />
         <div class="player-info">
-          <h3>{{ currentSong.title }}</h3>
-          <p>{{ currentSong.author }}</p>
+          <img src="@/assets/theshow.jpeg" alt="Cover" class="player-image" />
+          <div>
+            <h3>{{ currentSong.title }}</h3>
+            <p>{{ currentSong.author }}</p>
+          </div>
         </div>
+
+        <!-- Audio player -->
         <audio ref="audio" @timeupdate="updateTime" @ended="nextSong">
           <source :src="currentSong.src" type="audio/mp3" />
         </audio>
+
         <div class="player-controls">
-          <button @click="prevSong">⏮</button>
-          <button @click="togglePlay">{{ isPlaying ? '⏸' : '▶' }}</button>
-          <button @click="nextSong">⏭</button>
+          <img src="@/assets/prev.png" alt="Previous" @click="prevSong" />
+          <img :src="isPlaying ? require('@/assets/pause.png') : require('@/assets/play.png')" alt="Play/Pause" @click="togglePlay" />
+          <img src="@/assets/next.png" alt="Next" @click="nextSong" />
+          <img src="@/assets/repeat.png" alt="Repeat" />
+          <img src="@/assets/shuffle.png" alt="Shuffle" />
         </div>
-  
-        <input type="range" v-model="progress" @input="seekAudio" />
-        <div class="time-info">
+
+        <div class="progress-container">
           <span>{{ formatTime(currentTime) }}</span>
+          <input type="range" v-model="progress" @input="seekAudio" />
           <span>{{ formatTime(currentSong.duration) }}</span>
         </div>
       </div>
@@ -71,20 +78,38 @@
         this.playAudio();
       },
       playAudio() {
-        const audio = this.$refs.audio;
-        audio.src = this.currentSong.src;
-        audio.play();
-        this.isPlaying = true;
+        this.$nextTick(() => {  // Wait until DOM is updated
+          const audio = this.$refs.audio;  // Get the reference to audio element
+          if (!audio) {
+            console.error("Audio element not found.");
+            return;
+          }
+          audio.src = this.currentSong.src;  // Set the source
+          audio.load();  // Load the new audio source
+          audio.play()  // Play the audio
+            .then(() => {
+              this.isPlaying = true;  // Set the state to playing
+            })
+            .catch(err => {
+              console.error("Error playing audio:", err);
+            });
+        });
       },
       togglePlay() {
-        const audio = this.$refs.audio;
-        if (audio.paused) {
-          audio.play();
-          this.isPlaying = true;
-        } else {
-          audio.pause();
-          this.isPlaying = false;
-        }
+        this.$nextTick(() => {
+          const audio = this.$refs.audio;
+          if (!audio) {
+            console.error("Audio element is not found.");
+            return;
+          }
+          if (audio.paused) {
+            audio.play();
+            this.isPlaying = true;
+          } else {
+            audio.pause();
+            this.isPlaying = false;
+          }
+        });
       },
       prevSong() {
         this.currentSongIndex = (this.currentSongIndex - 1 + this.songs.length) % this.songs.length;
@@ -174,39 +199,77 @@
   
   .music-player {
     bottom: 0;
+    left: 0;
     width: 100%;
-    background: black;
-    padding: 10px;
+
+    background: white;
+    padding: 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-top: 1px solid white;
+    border-top: 2px solid black;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+    color: black;
   }
   
   .player-image {
     width: 50px;
     height: 50px;
     border-radius: 50%;
+    margin-right: 10px;
   }
   
   .player-info {
+    display: flex;
+    align-items: center;
     flex: 1;
-    margin-left: 10px;
   }
   
   .player-controls {
     display: flex;
-    gap: 10px;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .player-controls img {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    transition: opacity 0.2s ease-in-out;
   }
   
+  .player-controls img:hover {
+      opacity: 0.7;
+  }
+    
+
+  .player-controls img:hover {
+    opacity: 0.7;
+}
+
+/* Progress Bar */
+.progress-container {
+    display: flex;
+    align-items: center;
+    flex: 2;
+    margin-left: 20px;
+}
+
   input[type="range"] {
     width: 100%;
-    margin: 10px 0;
+    height: 4px;
+    background: #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 10px;
+    appearance: none;
   }
-  
+
+/* Time Info */
   .time-info {
     display: flex;
-    justify-content: space-between;
+    gap: 10px;
+    font-size: 14px;
   }
   </style>
   

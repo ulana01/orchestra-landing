@@ -8,18 +8,11 @@
         <li @click="scrollToEvents">{{ $t('Events') }}</li>
         <li>{{ $t('Orchestra') }}</li>
         <li>{{ $t('Community') }}</li>
+        <li>{{ $t('Support Us') }}</li>
         <li>{{ $t('News') }}</li>
-        <li>{{ $t('Donations') }}</li>
       </ul>
 
-      <!-- Support Us Button & Social Icons -->
-      <div class="nav-right">
-      <button class="support-btn">{{ $t('support') }}</button>
-      <div class="social-icons">
-        <img src="@/assets/instagram.png" alt="Instagram" class="social-icon">
-        <img src="@/assets/gmail.png" alt="Gmail" class="social-icon">
-      </div>
-    </div>
+      
 
       <!-- Language Selection -->
       <div class="language-selector">
